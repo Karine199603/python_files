@@ -13,3 +13,6 @@ env/
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
