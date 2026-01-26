@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Virtualenv
+venv/
+env/
+
+# IDE
+.idea/
+*.sublime-project
+*.sublime-workspace
