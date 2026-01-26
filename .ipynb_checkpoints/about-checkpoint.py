@@ -1,11 +1,11 @@
-# data
+#data
 name = "Kari"
 experience_years = 1.3
 is_active = True
 show_age_info = True
 is_eu_cv = True
 
-# additional info
+#additional info
 age = 29
 add_age_info = show_age_info == True and not is_eu_cv
 age_info = (
@@ -14,7 +14,7 @@ age_info = (
     else ""
 )
 
-# messages
+#messages
 greeting = "Hey there!"
 status_text = "And now I'm"
 python_engagement = (
@@ -24,12 +24,12 @@ python_engagement = (
 )
 farewell = "Tschüssi, bis bald!"
 
-# construct message
+#construct message
 header = f"{greeting.upper()} My name is {name}! :)"
 subheader = f"{age_info}I work as a Manual QA Engineer with {experience_years} years of experience in GameDev."
 body = f"{status_text} {python_engagement}"
 
-# list
+#list
 total_hours_plan = 0
 day_plan = [
     ["26.01.2026", total_hours_plan],
@@ -54,7 +54,7 @@ day_fact[0].append(total_hours_fact)
 print(day_fact)
 print(day_plan)
 
-# message
+#message
 message = f"""
 {header}
 {subheader}
@@ -62,5 +62,5 @@ message = f"""
 {farewell}
 """
 
-# print
+#print
 print(message)

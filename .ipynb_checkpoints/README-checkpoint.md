@@ -1,4 +1,4 @@
-# My Python
+# My_Python
 This is my first repository with Python code examples and automated tests
 
 ## How to run
