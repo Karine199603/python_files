@@ -20,27 +20,32 @@ def my_day(cv_sent, engagement_cv, subject, engagement_learn):
         "date": today,
         "total_hours": total_hours,
         "day_cv_activity": {
-            "CV_sent": cv_sent,
-            "engagement_hour": engagement_cv,
-            "satisfaction": True
+            "subject": cv_sent,
+            "engagement_hour": engagement_cv
         },
         "day_learn_activity": {
             "subject": subject,
-            "engagement_hour": engagement_learn,
-            "satisfaction": True
+            "engagement_hour": engagement_learn
         }
     }
 
 
 day_plan = my_day(10, 1, "Python", 2)
-day_fact = my_day(0, 0, "Python", 2)
+day_fact = my_day(1, 1, "Python", 2)
 
 
 # function to create engagement message based on total_hours
 def engagement_message_from_fact(day_fact: dict) -> str:
+    cv_activity = day_fact["day_cv_activity"]["subject"]
+    learn_hours = day_fact["day_learn_activity"]["engagement_hour"]
     subject = day_fact["day_learn_activity"]["subject"]
-    if day_fact["total_hours"] != 0:
-        return f"learned {subject} and applied for jobs."
+
+    if cv_activity > 0 and learn_hours > 0:
+        return f"sent CVs and learned {subject} {learn_hours} hours!"
+    elif cv_activity > 0:
+        return f"focused on sending CVs."
+    elif learn_hours > 0:
+        return f"learned {subject} {learn_hours} hours."
     else:
         return f"procrastinated..."
 
