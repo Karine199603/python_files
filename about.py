@@ -1,16 +1,16 @@
 from datetime import date
 
 # data
-name = "Kari"
-experience_years = 1.3
+NAME = "Kari"
+EXPERIENCE_YEARS = 1.3
 show_age_info = True
 is_eu_cv = True
 today = date.today().strftime("%B %d, %Y")
 
 # additional info
-age = 29
+AGE = 29
 add_age_info = show_age_info and not is_eu_cv
-age_info = f"I'm {age} years old. " if add_age_info else ""
+age_info = f"I'm {AGE} years old. " if add_age_info else ""
 
 
 # day activity
@@ -52,8 +52,8 @@ def engagement_message_from_fact(day_fact: dict) -> str:
 
 # messages
 greeting = "Hey there!"
-header = f"{greeting.upper()} My name is {name}! :)"
-subheader = f"{age_info}I work as a Manual QA Engineer with {experience_years} years of experience in GameDev.\nHow did my {today} go?"
+header = f"{greeting.upper()} My name is {NAME}! :)"
+subheader = f"{age_info}I work as a Manual QA Engineer with {EXPERIENCE_YEARS} years of experience in GameDev.\nHow did my {today} go?"
 body = f"I {engagement_message_from_fact(day_fact)}"
 farewell = "Tschüssi, bis bald!"
 
