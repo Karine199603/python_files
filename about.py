@@ -14,7 +14,7 @@ age_info = f"I'm {AGE} years old. " if add_age_info else ""
 
 
 # day activity
-def my_day(cv_sent, engagement_cv, subject, engagement_learn):
+def calculate_daily_activity(cv_sent, engagement_cv, subject, engagement_learn):
     total_hours = engagement_cv + engagement_learn
     return {
         "date": today,
@@ -30,22 +30,22 @@ def my_day(cv_sent, engagement_cv, subject, engagement_learn):
     }
 
 
-day_plan = my_day(10, 1, "Python", 2)
-day_fact = my_day(1, 1, "Python", 2)
+day_plan = calculate_daily_activity(10, 1, "Python", 2)
+day_fact = calculate_daily_activity(1, 1, "Python", 2)
 
 
 # function to create engagement message based on total_hours
-def engagement_message_from_fact(day_fact: dict) -> str:
+def generate_fact_engagement_message(day_fact: dict) -> str:
     cv_activity = day_fact["day_cv_activity"]["subject"]
     learn_hours = day_fact["day_learn_activity"]["engagement_hour"]
     subject = day_fact["day_learn_activity"]["subject"]
 
     if cv_activity > 0 and learn_hours > 0:
-        return f"sent CVs and learned {subject} {learn_hours} hours!"
+        return f"sent CVs and studied {subject} for {learn_hours} hours!"
     elif cv_activity > 0:
         return f"focused on sending CVs."
     elif learn_hours > 0:
-        return f"learned {subject} {learn_hours} hours."
+        return f"studied {subject} for {learn_hours} hours."
     else:
         return f"procrastinated..."
 
@@ -54,7 +54,7 @@ def engagement_message_from_fact(day_fact: dict) -> str:
 greeting = "Hey there!"
 header = f"{greeting.upper()} My name is {NAME}! :)"
 subheader = f"{age_info}I work as a Manual QA Engineer with {EXPERIENCE_YEARS} years of experience in GameDev.\nHow did my {today} go?"
-body = f"I {engagement_message_from_fact(day_fact)}"
+body = f"I {generate_fact_engagement_message(day_fact)}"
 farewell = "Tschüssi, bis bald!"
 
 # message
